@@ -17,7 +17,7 @@ const SIM_SCALE: f32 = HEIGHT / SIM_MIN_WIDTH;
 const SIM_WIDTH: f32 = WIDTH / SIM_SCALE;
 const SIM_HEIGHT: f32 = HEIGHT / SIM_SCALE;
 
-const DT: f32 = 1.0 / 60.0;
+const _DT: f32 = 1.0 / 60.0;
 const GRAVITY: f32 = 9.81;
 const DAMPENING: f32 = 0.9;
 
@@ -48,7 +48,7 @@ impl SimulationState {
 
     fn symplectic_euler(&mut self, _dt: f32) {
         let substeps = 5;
-        let sdt = DT / substeps as f32;
+        let sdt = _DT / substeps as f32;
 
         let mut v = self.ball.vel;
         let mut r = self.ball.pos;
